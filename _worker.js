@@ -11,17 +11,8 @@ let 屏蔽爬虫UA = ['netcraft'];
 function routeByHosts(host) {
 	// 定义路由表
 	const routes = {
-		// 生产环境
-		"quay": "quay.io",
-		"gcr": "gcr.io",
-		"k8s-gcr": "k8s.gcr.io",
-		"k8s": "registry.k8s.io",
-		"ghcr": "ghcr.io",
-		"cloudsmith": "docker.cloudsmith.io",
-		"nvcr": "nvcr.io",
-
-		// 测试环境
-		"test": "registry-1.docker.io",
+		"docker-registry-mirror-ghcrio.inf1ames.com": "ghcr.io",
+		"docker-registry-mirror.inf1ames.com": "https://registry-1.docker.io",
 	};
 
 	if (host in routes) return [routes[host], false];
